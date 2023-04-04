@@ -14,10 +14,11 @@ async function cat(path) {
 
 
 function readAllFiles() {
+  console.log(process.argv);
   const files = process.argv;
 
-  for(const file of files){
-    cat(file);
+  for(let i=2 ; i<files.length; i++){
+    cat(files[i]);
   }
 };
 
